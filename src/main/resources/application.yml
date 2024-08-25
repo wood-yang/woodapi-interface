@@ -1,0 +1,12 @@
+spring:
+  application:
+    name:
+      woodapi-interface
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+woodapi:
+  client:
+    access-key: "wood"
+    secret-key: "abc"
