@@ -17,12 +17,12 @@ public class NameController {
     @Resource
     private WoodapiClient woodapiClient;
 
-    @GetMapping("")
+    @GetMapping
     public String getNameByGet(String name) {
         return "GET 你的名字是" + name;
     }
 
-    @PostMapping("")
+    @PostMapping
     public String getNameByPost(@RequestParam String name) {
         return "POST 你的名字是" + name;
     }
