@@ -17,13 +17,15 @@ public class NameController {
     @Resource
     private WoodapiClient woodapiClient;
 
-    @GetMapping
-    public String getNameByGet(String name) {
+    @GetMapping("/get")
+    public String getNameByGet(String name, HttpServletRequest request) {
+        System.out.println(request.getHeader("game"));
         return "GET 你的名字是" + name;
     }
 
-    @PostMapping
-    public String getNameByPost(@RequestParam String name) {
+    @PostMapping("/post")
+    public String getNameByPost(@RequestParam String name, HttpServletRequest request) {
+        System.out.println(request);
         return "POST 你的名字是" + name;
     }
 
