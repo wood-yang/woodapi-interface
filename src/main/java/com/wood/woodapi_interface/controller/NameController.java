@@ -52,6 +52,9 @@ public class NameController {
 //        }
 
 
-        return "POST 用户名是" + user.getUsername();
+        String result = "POST 用户名是" + user.getUsername();
+        // 调用成功，次数+1
+
+        return result;
     }
 }
