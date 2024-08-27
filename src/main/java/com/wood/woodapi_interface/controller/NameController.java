@@ -35,9 +35,9 @@ public class NameController {
         String sign = request.getHeader("sign");
         String body = request.getHeader("body");
         // todo 实际情况应该是去数据库中查看用户是否具有accessKey
-        if (!"wood".equals(accessKey)) {
-            throw new RuntimeException("无权限");
-        }
+//        if (!"wood".equals(accessKey)) {
+//            throw new RuntimeException("无权限");
+//        }
         if (Long.parseLong(nonce) > 10000) {
             throw new RuntimeException("无权限");
         }
@@ -47,9 +47,9 @@ public class NameController {
             throw new RuntimeException("请求已超时");
         }
         // todo 实际情况中是从服务器查出 secertKey
-        if (!SignUtils.getSign(body, "abc").equals(sign)) {
-            throw new RuntimeException("无权限");
-        }
+//        if (!SignUtils.getSign(body, "abc").equals(sign)) {
+//            throw new RuntimeException("无权限");
+//        }
 
 
         return "POST 用户名是" + user.getUsername();
