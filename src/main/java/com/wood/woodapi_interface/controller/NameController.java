@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 名称 API
@@ -30,7 +31,7 @@ public class NameController {
     }
 
     @PostMapping("/user")
-    public String getUsernameByPost(@RequestBody User user, HttpServletRequest request) {
+    public String getUsernameByPost(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
         String accessKey = request.getHeader("accessKey");
         String nonce = request.getHeader("nonce");
         String timestamp = request.getHeader("timestamp");
@@ -56,6 +57,9 @@ public class NameController {
 
         String result = "POST 用户名是" + user.getUsername();
         // 调用成功，次数+1
+
+        response.addHeader("game", "LOL");
+        response.addHeader("clothes", "T-shirt");
 
         return result;
     }
