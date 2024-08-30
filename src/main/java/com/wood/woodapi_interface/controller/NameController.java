@@ -34,4 +34,5 @@ public class NameController {
     public String getUsernameByPost(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
         return "POST 用户名是" + user.getUsername();
     }
+
 }
